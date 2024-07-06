@@ -1,0 +1,11 @@
+{
+  "name": "dicoding-books-using-xhr",
+  "version": "1.0.0",
+  "description": "Silakan lihat branch untuk melihat berkas atau source code yang diinginkan.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

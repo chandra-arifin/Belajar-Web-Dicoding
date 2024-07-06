@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Notes App</title>
+
+        <!-- Own Styles -->
+        <link rel="icon" href="/src/public/favicon.png" sizes="512x512" />
+    </head>
+    <body>
+        <loading-component></loading-component>
+
+        <header>
+            <app-bar></app-bar>
+        </header>
+
+        <main>
+            <div class="container">
+                <form id="addForm" class="addForm">
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            id="title"
+                            name="title"
+                            required
+                            pattern="^(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$"
+                            minlength="7"
+                            aria-describedby="titleValidation"
+                        />
+                        <label for="title">Notes Title</label>
+                        <p id="titleValidation" class="validation-message"></p>
+                        <br />
+                        <textarea
+                            id="body"
+                            name="body"
+                            rows="10"
+                            cols="50"
+                            placeholder="isi body disini"
+                            required
+                        >
+                        </textarea>
+                        <br />
+                        <button class="tambah">Add</button>
+                    </div>
+                </form>
+
+                <section-with-title id="note" class="note" title="Notes App">
+                    <div id="notesListContainer" class="notes-list-container">
+                        <notes-list></notes-list>
+                    </div>
+                </section-with-title>
+            </div>
+        </main>
+
+        <footer>
+            <footer-bar></footer-bar>
+        </footer>
+    </body>
+</html>

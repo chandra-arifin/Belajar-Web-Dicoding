@@ -1,0 +1,195 @@
+* {
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  padding-block: 32px;
+  padding-inline: 16px;
+  margin-inline: auto;
+}
+
+.card {
+  border-radius: 8px;
+
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+label {
+  display: block;
+}
+
+section > .title-section {
+  margin-block-end: 2rem;
+
+  font-size: 1.2em;
+}
+
+header, footer {
+  background-color: #0F67B1;
+
+  color: #F5F7F8;
+}
+
+.app-bar {
+  padding: 24px 20px;
+}
+
+.app-bar .brand-name {
+  margin: 0;
+
+  font-size: 1.7em;
+}
+
+main {
+}
+
+.notes-list-container {
+  margin-block-start: 32px;
+}
+
+
+
+.notes-list .list .card {
+  width: 100%;
+  max-height: 450px;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.notes-list .list .card .note-info {
+  padding: 16px 24px;
+}
+
+.notes-list .list .card .note-info__title h2 {
+  font-weight: lighter;
+}
+
+.notes-list .list .card .note-info__body p {
+  display: -webkit-box;
+  margin-top: 10px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5; /* number of lines to show */
+}
+
+.notes-list-container .placeholder {
+  margin-block: 1rem;
+
+  font-size: 1.5rem;
+  font-weight: lighter;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.addForm .form-group input {
+  display: block;
+
+  width: 100%;
+  height: 60px;
+
+  padding: 14px 10px 0 10px;
+  border-inline: none;
+  border-block-start: none;
+  border-block-end: 1px solid cornflowerblue;
+
+  font-size: 1rem;
+}
+
+
+.tambah {
+  border: 0;
+  padding-inline: 24px;
+  background-color: cornflowerblue;
+
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: white;
+
+  cursor: pointer;
+
+  transition: 100ms linear;
+}
+
+
+.addForm {
+  display: flex;
+  gap: 16px;
+}
+
+.addForm .form-group {
+  flex-grow: 1;
+
+  position: relative;
+}
+
+.addForm .form-group input:focus-visible {
+  outline: 0;
+}
+
+.addForm .form-group label {
+  line-height: 60px;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: cornflowerblue;
+
+  white-space: nowrap;
+
+  position: absolute;
+  top: 0;
+  left: 20px;
+
+  user-select: none;
+  pointer-events: none;
+
+  transition: 150ms all ease-in-out;
+}
+
+.addForm .form-group input:focus-visible ~ label,
+.addForm .form-group input:valid ~ label {
+  left: 10px;
+  top: -16px;
+
+  font-size: 0.8em;
+}
+
+.addForm .form-group button {
+  border: 0;
+  padding-inline: 24px;
+  background-color: cornflowerblue;
+
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: white;
+
+  cursor: pointer;
+
+  transition: 100ms linear;
+}
+
+.addForm button:hover {
+  background-color: #4485ff;
+}
+
+.addForm button:active {
+  background-color: #6c9aee;
+}
+
+.notes-list .list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+

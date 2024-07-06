@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notes App</title>
+
+    <!-- Own Styles -->
+    <link rel="icon" href="/src/public/favicon.png" sizes="512x512" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+
+    <!-- Favicons -->
+    <link rel="stylesheet" href="/src/styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <app-bar></app-bar>
+    </header>
+
+    <main>
+      <div class="container">
+
+        <my-paragraph></my-paragraph>
+        
+        <form id="addForm" class="addForm" oninput="validasiTitle()">
+          <div class="form-group">
+            <input id="title" name="title" required />
+            <label for="title">Notes Title</label>
+            <span id="error-title" style="color: red;"></span>
+            <br>
+            <textarea id="body" name="body" rows="10" cols="50" 
+              placeholder="isi body disini" required>
+            </textarea>
+            <br>
+            <button class="tambah">Add</button>
+          </div>
+        </form>
+
+        <section-with-title id="note" class="note" title="Notes App">
+          <div id="notesListContainer" class="notes-list-container">
+            <notes-list></notes-list>
+          </div>
+        </section-with-title>
+      </div>
+    </main>
+
+    <footer>
+      <footer-bar></footer-bar>
+    </footer>
+
+    <script type="module" src="/src/app.js">
+      
+    </script>
+    <script>
+      function validasiTitle() 
+      {
+        var validasiHuruf = /^[a-zA-Z!,. ]+$/;
+        var docTitle = document.getElementById("title");
+        var title = docTitle.value.trim(); 
+
+        if (title === "") {
+            document.getElementById("error-title").textContent = "Title tidak boleh kosong!";
+            return false;
+        } else {
+            document.getElementById("error-title").textContent = "";
+        }
+
+        if(!title.match(validasiHuruf))
+        {
+          document.getElementById("error-tistle").textContent = "Title harus huruf Abjad";
+          return false;
+        }
+        else
+        {
+          document.getElementById("error-title").textContent = "";
+        }
+
+        if(title.length > 20)
+        {s
+          document.getElementById("error-title").textContent = "Panjang Title tidak boleh lebih dari 20!";
+          return false;
+        } else {
+            document.getElementById("error-title").textContent = "";
+        }
+      }
+    </script>
+  </body>
+</html>
