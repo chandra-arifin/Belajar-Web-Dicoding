@@ -26,7 +26,8 @@ class Notes {
     }
 
     static addNote = async (title, body) => {
-        try {
+        try 
+        {
             const data = {
                 title: title,
                 body: body,
