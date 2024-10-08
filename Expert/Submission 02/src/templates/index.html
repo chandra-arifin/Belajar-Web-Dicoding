@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hunger App</title>
-  <link href="main.css" rel="stylesheet" type="text/css" />
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+  <link href="../styles/main.css" rel="stylesheet" type="text/css" />
   <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
   <link rel="manifest" href="./app.webmanifest">
 </head>
@@ -15,31 +16,26 @@
   <loading-component></loading-component>
 
   <header class="navbar">
-      <a href="/" class="brand">Hunger App</a>
-      <ul>
-          <li><a href="/#/all-restaurant">Home</a></li>
-          <li><a href="/#/favorites">Favorite</a></li>
-          <li><a href="https://www.linkedin.com/in/chandra-arifin-dev/" target="_blank">About Us</a></li>
-      </ul>
-      <div class="hamburger" onclick="toggleMenu()">
-          <div></div>
-          <div></div>
-          <div></div>
-      </div>
-  </header>      
+    <a href="/" class="brand">Hunger App</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+      </button>
+    <ul>
+    <li><a href="/#/all-restaurant">Home</a></li>
+    <li><a href="/#/favorites">Favorite</a></li>
+    <li><a href="https://www.linkedin.com/in/chandra-arifin-dev/" target="_blank">About Us</a></li>
+    </ul>
+    </header>   
     
-  <div class="hero"></div>
-      <div class="hero__inner">
-        <h1 class="hero__title">Restaurant Apps</h1>
-        <p class="hero__tagline">
-          This Restaurant Apps contains alot of recommendation to more places that provides more foods and beverages.
-        </p>
-      </div>
-    </div>
-
-  <main id="maincontent"></main>
+  <main>
+    <hero-component></hero-component>
+    <div id="maincontent" tabindex="0"></div> 
+  </main>
+  
   <footer>
-    Copyright &copy; 2020 - Hunger App
+    <footer-bar></footer-bar>
   </footer>
 
 
@@ -48,6 +44,17 @@
       const menu = document.querySelector('.navbar ul');
       menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     }
+
+    function handleResize() {
+      const menu = document.querySelector('.navbar ul');
+      if (window.innerWidth > 768) {
+        menu.style.display = 'flex'; 
+      } else {
+        menu.style.display = 'none'; 
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
   </script>
   
 </body>

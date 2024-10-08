@@ -1,4 +1,6 @@
 const DrawerInitiator = {
+
+  // eslint-disable-next-line no-unused-vars
   init({ button, drawer, content }) {
     // button.addEventListener('click', (event) => {
     //   this._toggleDrawer(event, drawer);

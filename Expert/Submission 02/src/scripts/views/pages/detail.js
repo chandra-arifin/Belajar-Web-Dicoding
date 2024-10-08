@@ -26,10 +26,11 @@ const Detail = {
     return `
       <div id="resto" class="resto"></div>
       <div id="likeButtonContainer"></div>
-      <h2 class="resto">Add Review</h2>
+      <h2 class="resto__review">Add Review</h2>
       <form id="addForm" class="addForm" method="POST">
           <div class="form-group">
               <input
+                  placeholder="please input your name"
                   type="text"
                   id="nama"
                   name="nama"
@@ -38,7 +39,6 @@ const Detail = {
                   minlength="7"
                   aria-describedby="nameValidation"
               />
-              <label for="nama">Name</label>
               <p id="nameValidation" class="validation-message"></p>
               <br />
               <textarea

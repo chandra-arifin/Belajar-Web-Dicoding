@@ -265,6 +265,17 @@
       const menu = document.querySelector('.navbar ul');
       menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     }
+
+    function handleResize() {
+      const menu = document.querySelector('.navbar ul');
+      if (window.innerWidth > 768) {
+        menu.style.display = 'flex'; 
+      } else {
+        menu.style.display = 'none'; 
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
   </script>
   
 </body>
